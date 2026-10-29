@@ -1,0 +1,156 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-display: "Trebuchet MS", "Lucida Grande", "Segoe UI", sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-forest: var(--forest);
+  --color-forest-foreground: var(--forest-foreground);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-pale: var(--pale);
+  --color-pale-foreground: var(--pale-foreground);
+  --color-review: var(--review);
+  --color-review-foreground: var(--review-foreground);
+  --color-navy: var(--navy);
+  --color-strip: var(--strip);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-danger-soft: var(--danger-soft);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: #94E3D4;
+  --strip: #FFFFFF;
+  --foreground: oklch(0.26 0.02 200);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.02 200);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.02 200);
+
+  /* Dark forest green: headings, key decision modules */
+  --forest: oklch(0.34 0.07 160);
+  --forest-foreground: oklch(0.98 0.01 150);
+  /* Baloise green: positive / automated outcomes */
+  --brand: oklch(0.6 0.15 150);
+  --brand-foreground: oklch(0.99 0 0);
+  /* Pale green: standard process modules */
+  --pale: oklch(0.965 0.025 150);
+  --pale-foreground: oklch(0.34 0.07 160);
+  /* Soft blue-grey: human review & information */
+  --review: oklch(0.945 0.015 245);
+  --review-foreground: oklch(0.38 0.045 250);
+  /* Dark navy: controls, reconciliation, decision points */
+  --navy: #000D6E;
+  --navy-foreground: #FFFFFF;
+  --warning: oklch(0.72 0.15 65);
+  --warning-soft: oklch(0.96 0.04 80);
+  --warning-foreground: oklch(0.42 0.1 55);
+  --danger-soft: oklch(0.96 0.03 25);
+
+  --primary: var(--navy);
+  --primary-foreground: var(--navy-foreground);
+  --secondary: oklch(0.965 0.006 200);
+  --secondary-foreground: oklch(0.3 0.03 200);
+  --muted: oklch(0.97 0.004 200);
+  --muted-foreground: oklch(0.52 0.02 220);
+  --accent: var(--pale);
+  --accent-foreground: var(--forest);
+  --destructive: oklch(0.56 0.2 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.92 0.008 200);
+  --input: oklch(0.9 0.01 200);
+  --ring: oklch(0.6 0.15 150);
+  --chart-1: var(--brand);
+  --chart-2: var(--navy);
+  --chart-3: oklch(0.7 0.05 245);
+  --chart-4: var(--warning);
+  --chart-5: var(--forest);
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--forest);
+  --sidebar-primary-foreground: var(--forest-foreground);
+  --sidebar-accent: var(--pale);
+  --sidebar-accent-foreground: var(--forest);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  --shadow-card: 0 1px 2px oklch(0.3 0.02 200 / 0.05), 0 8px 24px -12px oklch(0.3 0.02 200 / 0.12);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-forest);
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
